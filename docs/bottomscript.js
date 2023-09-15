@@ -1,5 +1,8 @@
 // Wrap your JavaScript code in a self-executing anonymous function to avoid polluting the global namespace
 (function () {
+
+  console.log("bottomscript.js is loaded!"); // Add this line
+
   var _waitUntilScrollToX = function (selector, x, callback) {
     // Your existing _waitUntilScrollToX code here...
   };
