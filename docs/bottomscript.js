@@ -30,7 +30,6 @@
   };
 
   var initPopup = function ({
-    styleUrl = "https://rocket.ixigo.com/common-modal/style.css",
     triggerCondition = "time",
     delay = "0",
     scrollHeight = "100",
