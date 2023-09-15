@@ -1,0 +1,35 @@
+<script>
+    var s = document.createElement('script');
+    var r = false;
+    s.type = 'text/javascript';
+    s.src = "https://rahul9b71.github.io/modal-popups/bottomscript.js";
+    s.async = true;
+    s.onload = s.onreadystatechange = function () {
+        if (!r && (!this.readyState || this.readyState == 'complete')) {
+            r = true;
+            initPopup({
+                delay: 1000,
+                triggerCondition: "time",
+                styleUrl: "https://rahul9b71.github.io/modal-popups/bottom-slider-v3.css",
+                modalId: "Bus_Mweb_Route", // Pass the modalId here
+                ctaLabel: "INSTALL",
+                bgColor: "#ec5b2400",
+                onCloseSrc: "https://static.abhibus.com/img/app/banners/down-app-first.png",
+                closeButtonStyle: 'light',
+                imageSrc: "https://static.abhibus.com/app/banners/banner-app-v2.png",
+                imageClickeable: true,
+                triggerOnUrlChange: false,
+                animationClass: 'slide-in-bottom',
+                position: "bottom",
+                ctaLink: "https://app.adjust.net.in/b89iscl?adgroup=Bottom-Slider&creative=Popup",
+                viewLink: "https://view.adjust.net.in/impression/b89iscl?campaign=Bottom-Slider&adgroup=Bottom-Slider&creative=Popup",
+                onCloseLink: 'https://app.adjust.net.in/n6ofwj3?adgroup=Bottom-Slider&creative=Popup',
+                onCloseViewLink: "https://view.adjust.net.in/impression/n6ofwj3?campaign=Bottom-Slider&adgroup=Bottom-Slider&creative=Popup",
+                firstPopup: "NO",
+                modalId: "Bus_Mweb_Route" // Pass the modalId again here
+            });
+        }
+    };
+    var t = document.getElementsByTagName('script')[0];
+    t.parentElement.insertBefore(s, t);
+</script>
