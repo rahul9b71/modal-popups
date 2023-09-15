@@ -6,23 +6,22 @@
   box-sizing: border-box;
 }
 
-section.ixi-growth-popup {
-  position: fixed;
-  width: 100% !important;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1060;
-  max-width: 100% !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.5s ease-in-out;
-  background: rgba(0, 0, 0, 0.4); /* Add an opaque background */
-}
-
 /* Styles for mobile screens */
 @media (max-width: 767px) {
+  section.ixi-growth-popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    background: rgba(0, 0, 0, 0.4); /* Add an opaque background */
+  }
+
   section.ixi-growth-popup .profile {
     display: flex;
     align-items: center;
@@ -48,6 +47,20 @@ section.ixi-growth-popup {
 
 /* Styles for desktop screens */
 @media (min-width: 768px) {
+  section.ixi-growth-popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    background: rgba(0, 0, 0, 0.4); /* Add an opaque background */
+  }
+
   section.ixi-growth-popup .profile {
     display: flex;
     align-items: center;
@@ -75,6 +88,7 @@ section.ixi-growth-popup {
   height: 100%;
   width: 100%;
   pointer-events: none;
+  z-index: 1050; /* Ensure the overlay is behind the popup */
 }
 
 /* Close button styles */
@@ -83,6 +97,7 @@ section.ixi-growth-popup {
   top: 10px; /* Adjust top position as needed */
   right: 10px; /* Adjust right position as needed */
   cursor: pointer;
+  z-index: 1060; /* Ensure the close button is above the popup */
 }
 
 .show .popup-outer {
