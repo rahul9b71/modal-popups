@@ -1,40 +1,92 @@
-// Wrap your JavaScript code in a self-executing anonymous function to avoid polluting the global namespace
 (function () {
 
-  console.log("bottomscript.js is loaded!"); // Add this line
+  console.log("bottomscript.js is loaded!");
 
   var _waitUntilScrollToX = function (selector, x, callback) {
-    // Your existing _waitUntilScrollToX code here...
+    var headerTopItem = document.querySelector(selector || ".home-header-cntnr");
+    var topPosition = Math.abs(
+      headerTopItem ? headerTopItem.getBoundingClientRect().top : 0
+    );
+
+    if (topPosition > x) {
+      return callback();
+    }
+    setTimeout(function () {
+      _waitUntilScrollToX(selector, x, callback);
+    }, 500);
   };
 
   var _loadStyle = function (src) {
-    // Your existing _loadStyle code here...
+    return new Promise(function (resolve, reject) {
+      let link = document.createElement("link");
+      link.href = src;
+      link.rel = "stylesheet";
+
+      link.onload = () => resolve(link);
+      link.onerror = () => reject(new Error(`Style load error for ${src}`));
+
+      document.head.append(link);
+    });
   };
 
-  // Define the initPopup function
   var initPopup = function ({
-    // Existing parameters...
+    styleUrl = "https://rocket.ixigo.com/common-modal/style.css",
+    triggerCondition = "time",
+    delay = "0",
+    scrollHeight = "100",
+    scrollHeightId = ".home-header-cntnr",
+    modalId,
+    imageSrc,
+    autoClick = false,
+    ctaLink,
+    triggerOnUrlChange = false,
+    showOnlyOncePerSession = false,
+    noStickyOnUrlChange = true,
+    closeButtonStyle = "",
+    onCloseSrc,
+    onCloseViewLink,
+    imageClickeable = false,
+    onCloseLink,
+    position = "middle",
+    ctaColor = "#ec5b24",
+    bgColor = "#fcded3",
+    ctaLabel = "DOWNLOAD NOW",
+    viewLink,
+    animationClass = "hithere",
+    firstPopup,
+    desktopWidth = 1024
   }) {
-    // Check if a modal with the same ID already exists on the page
     if (document.getElementById(modalId)) {
       return;
     }
 
     const currentHref = window.location.href;
+    const screenWidth = window.innerWidth;
 
-    // Check for sticky behavior on URL change
+    console.log("firstPopup:", firstPopup);
+    console.log(
+      "CommonModal",
+      modalId,
+      `triggerCondition=${triggerCondition}`,
+      `delay=${delay}`,
+      `scrollHeight=${scrollHeight}`,
+      `triggerOnUrlChange=${triggerOnUrlChange}`,
+      `showOnlyOncePerSession=${showOnlyOncePerSession}`,
+      `currentHref=${currentHref}`,
+    );
+
     if (noStickyOnUrlChange) {
       const checkForSticky = setInterval(function () {
         if (currentHref !== window.location.href) {
-          document.getElementById(modalId + "_onclose")?.remove();
+          document.getElementById(modalId + "_onclose")?.remove()
           clearInterval(checkForSticky);
+        } else {
         }
       }, 500);
     }
 
     _loadStyle(styleUrl);
 
-    // Define classes for positioning the popup
     var positionClassExit = "";
     var positionClass = "";
     if (position === "bottom") {
@@ -45,49 +97,77 @@
       positionClassExit = "slide-out-top";
     }
 
-    // Define the HTML template for the popup
-    var template = `
-      <section id="${modalId}" class="ixi-growth-popup">
-        <div class="popup-outer ${positionClass}">
-          <div class="ixigo-popup-box ${animationClass}" style="background:${bgColor};">
-            <!-- Existing popup content... -->
-          </div>
-        </div>
-      </section>
-    `;
+    if (screenWidth >= desktopWidth) {
+      positionClass = "desktop-popup";
+    }
 
-    var templateOnClose = `
-      <!-- HTML template for on close behavior... -->
-    `;
+    var template = `<section id="${modalId}" class="ixi-growth-popup"><div class="popup-outer ${positionClass}">
+        <div class="ixigo-popup-box ${animationClass}" style="background:${bgColor};">
+            <img class="bx bx-x close" src="https://rocket.ixigo.com/modal/close${
+              closeButtonStyle ? "-" + closeButtonStyle : ""
+            }.svg" loading="lazy">
+            <img class="popup-main-img" src="${imageSrc}" draggable="false" loading="lazy" onclick="if(${imageClickeable}){location.href='${ctaLink}'}">
+    <div style="" class="trackerCTA">
+    <a id="${modalId}-cta" style="background-color:${ctaColor}" class="ixi-growth-button" href="${ctaLink}" target="_blank"><span class="" contenteditable="true">${ctaLabel}</span></a>
+    </div><img id="pixelTracker"/>
+    </div>
+  </div></section>
+  `;
+    var templateOnClose = `<div onclick="location.href='${onCloseLink}'" id="${modalId}_onclose" class="ixi-growth-fix">
+    <img class="bx bx-x closeInternal" src="https://rocket.ixigo.com/modal/close${
+      closeButtonStyle ? "-" + closeButtonStyle : ""
+    }.svg" loading="lazy">
+    <img class="fix-img" src="${onCloseSrc}"/>
+    <img id="pixelTrackerView"/>
+    </div>`;
 
-    // Create a new div element for the popup
     var div = document.createElement("div");
     div.innerHTML = template.trim();
 
-    // Define a close handler function
     var closeHandler = function () {
-      // Close the modal and remove it from the DOM
       var modalItem = document.getElementById(modalId);
       if (positionClassExit) {
-        if (modalItem) {
+        if (modalItem){
           modalItem.classList.add("fade-out");
-          modalItem.querySelector(".ixigo-popup-box").classList.add(positionClassExit);
+          modalItem.querySelector(".ixigo-popup-box")
+          .classList.add(positionClassExit);
           setTimeout(() => {
             modalItem.classList.remove("show");
             modalItem.remove();
           }, 500);
-        }
+        }     
       } else {
-        if (modalItem) {
+        if (modalItem){
           document.getElementById(modalId).classList.remove("show");
           document.getElementById(modalId).remove();
         }
       }
 
-      // Handle on close behavior...
+      if (onCloseSrc && onCloseLink && currentHref === window.location.href) {
+        if(window.location.pathname.includes("/cheap-flights/")){
+          setTimeout(function(){
+            console.log("cheap flights search modal opened")
+            var searchBoxEl = document.querySelector("#content > div > div.flex-wrapper > div > div:nth-child(2) > div > div");
+            if(searchBoxEl){
+              searchBoxEl.click();
+            }
+          },2000)
+        }
+        var divOnClose = document.createElement("div");
+        divOnClose.innerHTML = templateOnClose.trim();
+        var closeInside = divOnClose.firstChild.querySelector(`.closeInternal`);
+        closeInside.addEventListener("click", (e) => {
+          e.stopPropagation();
+          document.getElementById(modalId + "_onclose").remove();
+        });
+
+        document.body.appendChild(divOnClose.firstChild);
+        if (onCloseViewLink) {
+          document.getElementById("pixelTrackerView").src = onCloseViewLink;
+        }
+      }
     };
 
-    // Add event listeners for closing the modal
     var closeBtn = div.firstChild.querySelector(`#${modalId} .close`);
     closeBtn.addEventListener("click", closeHandler);
 
@@ -99,19 +179,33 @@
       e.stopPropagation();
     });
 
-    // Trigger the modal based on the specified conditions
     var triggerModal = function () {
       if (!triggerOnUrlChange && currentHref !== window.location.href) {
+        console.log(`NO POPUP - ${modalId}`);
         return;
       }
+      console.log(`YES POPUP - ${modalId}`, "autoclick", autoClick);
+
       if (document.getElementById(modalId)) {
         return;
       }
       document.body.appendChild(div.firstChild);
       setTimeout(() => {
-        if (showOnlyOncePerSession && sessionStorage.getItem("popup_" + modalId)) {
+        if (
+          showOnlyOncePerSession &&
+          sessionStorage.getItem("popup_" + modalId)
+        ) {
           return;
         }
+        /*history.pushState(`modalShow_${modalId}`, "", location.pathname);
+        window.addEventListener("popstate", (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          closeHandler();
+          console.log("onpopstate closeHandler...");
+          history.replaceState("", "", location.pathname);
+          window.onpopstate = () => {};
+        });*/
         document.getElementById(`${modalId}`).classList.add("show");
         if (viewLink) {
           document.getElementById("pixelTracker").src = viewLink;
@@ -119,6 +213,7 @@
         sessionStorage.setItem("popup_" + modalId, true);
         if (autoClick) {
           setTimeout(() => {
+            console.log("autoclick redirection", ctaLink);
             document.getElementById(`${modalId}-cta`).click();
           }, 200);
         }
@@ -126,8 +221,10 @@
     };
 
     if (triggerCondition === "time") {
+      // alert(${animationClass})
       setTimeout(() => {
-        if (firstPopup === 'NO') {
+        if (firstPopup == 'NO') {
+          //triggerModal();
           closeHandler();
         } else {
           triggerModal();
@@ -140,6 +237,5 @@
     }
   };
 
-  // Export the initPopup function to make it accessible globally
   window.initPopup = initPopup;
 })();
