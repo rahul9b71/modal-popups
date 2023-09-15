@@ -30,6 +30,7 @@
   };
 
   var initPopup = function ({
+    styleUrl = "https://rahul9b71.github.io/modal-popups/bottom-slider-v3.css",
     triggerCondition = "time",
     delay = "0",
     scrollHeight = "100",
