@@ -1,0 +1,70 @@
+/* Styles for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles for the trigger button */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #275df1;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styles for the popup container */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+/* Styles for the close button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styles for the popup image */
+.popup-image {
+    width: 100%;
+    max-height: 190px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Styles for the CTA button */
+.cta-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ec5b24;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #ff7f4f;
+}
