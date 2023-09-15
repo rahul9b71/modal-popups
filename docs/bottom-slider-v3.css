@@ -1,0 +1,140 @@
+/* Common styles for both mobile and desktop */
+.ixi-growth-popup * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section.ixi-growth-popup {
+  position: fixed;
+  width: 100% !important;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  max-width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Styles for mobile screens */
+@media (max-width: 767px) {
+  section.ixi-growth-popup .profile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  section.ixi-growth-popup.show .profile {
+    display: none;
+  }
+
+  section.ixi-growth-popup .profile .profile-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #275df1;
+    padding: 3px;
+    margin-bottom: 10px;
+  }
+
+  /* Add mobile-specific styles here */
+}
+
+/* Styles for desktop screens */
+@media (min-width: 768px) {
+  section.ixi-growth-popup .profile {
+    /* Adjust desktop-specific styles here */
+  }
+
+  /* Add desktop-specific styles here */
+}
+
+.popup-outer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup-outer-bottom {
+  align-items: end !important;
+}
+
+.popup-outer-bottom .ixigo-popup-box {
+  border-radius: 12px 12px 0 0;
+}
+
+.popup-outer-top .ixigo-popup-box {
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-outer-top {
+  align-items: start !important;
+}
+
+.show .popup-outer {
+  opacity: 10;
+  pointer-events: auto;
+  /*padding: 10px;*/
+}
+
+/* Add other common styles here */
+
+/* Desktop-specific styles */
+@media (min-width: 768px) {
+  .ixigo-popup-box {
+    /* Adjust desktop-specific styles here */
+  }
+
+  /* Add desktop-specific styles here */
+}
+
+/* Common styles for both mobile and desktop */
+.ixi-growth-fix .closeInternal {
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffffwhite;
+  background-color: #FF9191;
+  border-radius: 40%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* Add other common styles here */
+
+/* Desktop-specific styles */
+@media (min-width: 768px) {
+  .ixi-growth-fix .fix-img {
+    /* Adjust desktop-specific styles here */
+  }
+
+  /* Add desktop-specific styles here */
+}
+
+/* Add other common styles here */
+
+/* Desktop-specific styles */
+@media (min-width: 768px) {
+  .slide-in-bottom {
+    /* Adjust desktop-specific styles here */
+  }
+
+  /* Add desktop-specific styles here */
+}
+
+/* Add other common styles here */
