@@ -1,0 +1,841 @@
+.element {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.element .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 375px;
+  height: 1310px;
+  position: relative;
+}
+
+.element .form {
+  display: flex;
+  flex-direction: column;
+  width: 345px;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px 15px 15px;
+  position: absolute;
+  top: 131px;
+  left: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: #0000003d;
+}
+
+.element .div-2 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.element .div-3 {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.element .text-wrapper {
+  position: relative;
+  flex: 1;
+  font-family: "ixitype-Regular", Helvetica;
+  font-weight: 400;
+  color: #b0b0b0;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .line {
+  align-self: stretch;
+  width: 100%;
+  position: relative;
+  height: 1px;
+  object-fit: cover;
+}
+
+.element .date-and-traveller {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.element .date {
+  display: flex;
+  width: 210px;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #0000003d;
+}
+
+.element .img {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.element .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "ixitype-Regular", Helvetica;
+  font-weight: 400;
+  color: #212121;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .traveller {
+  display: flex;
+  width: 90px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #0000003d;
+}
+
+.element .frame {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.element .text-wrapper-3 {
+  position: relative;
+  flex: 1;
+  margin-top: -1px;
+  font-family: "ixitype-Regular", Helvetica;
+  font-weight: 400;
+  color: #212121;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .vector {
+  position: relative;
+  width: 11px;
+  height: 6.55px;
+}
+
+.element .swap {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 39px;
+  left: 275px;
+  background-color: #fdfcfc;
+  border-radius: 100px;
+  border: 1px solid;
+  border-color: #dbdee1;
+}
+
+.element .ion-swap-horizontal {
+  position: absolute;
+  width: 25px;
+  height: 24px;
+  top: 7px;
+  left: 6px;
+}
+
+.element .div-wrapper {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  background-color: #d1d1d1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.element .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #f8f8f8;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .navbar {
+  display: flex;
+  width: 375px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 12px 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.element .time {
+  position: relative;
+  width: fit-content;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--text-normal);
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.element .wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.element .rectangle {
+  position: absolute;
+  width: 3px;
+  height: 10px;
+  top: 7px;
+  left: 18px;
+  background-color: var(--text-normal);
+  border-radius: 1px;
+}
+
+.element .rectangle-2 {
+  position: absolute;
+  width: 3px;
+  height: 4px;
+  top: 13px;
+  left: 3px;
+  background-color: var(--text-normal);
+  border-radius: 1px;
+}
+
+.element .rectangle-3 {
+  position: absolute;
+  width: 3px;
+  height: 6px;
+  top: 11px;
+  left: 8px;
+  background-color: var(--text-normal);
+  border-radius: 1px;
+}
+
+.element .rectangle-4 {
+  position: absolute;
+  width: 3px;
+  height: 8px;
+  top: 9px;
+  left: 13px;
+  background-color: var(--text-normal);
+  border-radius: 1px;
+}
+
+.element .vector-2 {
+  position: absolute;
+  width: 5px;
+  height: 3px;
+  top: 15px;
+  left: 10px;
+}
+
+.element .overlap-group {
+  position: absolute;
+  width: 16px;
+  height: 7px;
+  top: 7px;
+  left: 4px;
+}
+
+.element .vector-3 {
+  position: absolute;
+  width: 10px;
+  height: 3px;
+  top: 4px;
+  left: 3px;
+}
+
+.element .vector-4 {
+  position: absolute;
+  width: 16px;
+  height: 4px;
+  top: 0;
+  left: 0;
+}
+
+.element .overlap {
+  position: absolute;
+  width: 23px;
+  height: 12px;
+  top: 6px;
+  left: -1px;
+  border-radius: 2px;
+  border: 1px solid;
+  border-color: var(--text-normal);
+}
+
+.element .rectangle-5 {
+  position: relative;
+  width: 19px;
+  height: 8px;
+  top: 1px;
+  left: 1px;
+  background-color: var(--text-normal);
+  border-radius: 1px;
+}
+
+.element .ellipse {
+  position: absolute;
+  width: 2px;
+  height: 4px;
+  top: 10px;
+  left: 23px;
+}
+
+.element .group {
+  position: absolute;
+  width: 202px;
+  height: 44px;
+  top: 65px;
+  left: 15px;
+}
+
+.element .text-wrapper-5 {
+  position: absolute;
+  width: 169px;
+  height: 44px;
+  top: 0;
+  left: 31px;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .back {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 1px;
+  left: 0;
+}
+
+.element .frame-wrapper {
+  position: absolute;
+  width: 113px;
+  height: 27px;
+  top: 64px;
+  left: 247px;
+}
+
+.element .frame-2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 8px;
+  position: relative;
+  background-color: #db635a;
+  border-radius: 4px;
+}
+
+.element .track-ticket {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+.element .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.96px;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .overlap-wrapper {
+  position: absolute;
+  width: 377px;
+  height: 183px;
+  top: 395px;
+  left: 0;
+}
+
+.element .overlap-2 {
+  position: relative;
+  width: 375px;
+  height: 183px;
+}
+
+.element .rectangle-6 {
+  position: absolute;
+  width: 372px;
+  height: 183px;
+  top: 0;
+  left: 0;
+}
+
+.element .frame-3 {
+  position: absolute;
+  width: 360px;
+  height: 119px;
+  top: 46px;
+  left: 15px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.element .group-wrapper {
+  position: absolute;
+  width: 240px;
+  height: 119px;
+  top: 0;
+  left: 256px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.element .overlap-group-wrapper {
+  width: 244px;
+  height: 119px;
+}
+
+.element .overlap-3 {
+  background-image: url(./img/rectangle-18142.svg);
+  position: relative;
+  width: 240px;
+  height: 119px;
+  background-size: 100% 100%;
+}
+
+.element .overlap-4 {
+  position: absolute;
+  width: 228px;
+  height: 109px;
+  top: 10px;
+  left: 0;
+}
+
+.element .layer {
+  position: absolute;
+  width: 64px;
+  height: 46px;
+  top: 63px;
+  left: 0;
+}
+
+.element .group-2 {
+  position: absolute;
+  width: 102px;
+  height: 62px;
+  top: 13px;
+  left: 120px;
+}
+
+.element .group-3 {
+  position: absolute;
+  width: 81px;
+  height: 46px;
+  top: 63px;
+  left: 55px;
+}
+
+.element .text-wrapper-7 {
+  position: absolute;
+  height: 19px;
+  top: 0;
+  left: 12px;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #212121;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .p {
+  position: absolute;
+  width: 216px;
+  top: 23px;
+  left: 12px;
+  font-family: "ixitype-Regular", Helvetica;
+  font-weight: 400;
+  color: #535353;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+
+.element .group-4 {
+  position: absolute;
+  width: 84px;
+  height: 28px;
+  top: 85px;
+  left: 152px;
+}
+
+.element .overlap-group-2 {
+  position: relative;
+  width: 82px;
+  height: 28px;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
+.element .text-wrapper-8 {
+  position: absolute;
+  height: 16px;
+  top: 6px;
+  left: 11px;
+  font-family: "ixitype-Regular", Helvetica;
+  font-weight: 400;
+  color: #212121;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .frame-4 {
+  position: absolute;
+  width: 240px;
+  height: 119px;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.element .overlap-5 {
+  background-image: url(./img/rectangle-18142-1.svg);
+  position: relative;
+  width: 240px;
+  height: 119px;
+  background-size: 100% 100%;
+}
+
+.element .text-wrapper-9 {
+  position: absolute;
+  width: 355px;
+  top: 12px;
+  left: 15px;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #212121;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .group-5 {
+  position: absolute;
+  width: 377px;
+  height: 218px;
+  top: 578px;
+  left: 0;
+}
+
+.element .overlap-6 {
+  position: relative;
+  width: 375px;
+  height: 218px;
+  background-image: url(./img/rectangle-18141-1.svg);
+  background-size: 100% 100%;
+}
+
+.element .group-6 {
+  position: absolute;
+  width: 345px;
+  height: 72px;
+  top: 48px;
+  left: 15px;
+  border-radius: 4px;
+  background: linear-gradient(
+    180deg,
+    rgba(243, 231, 233, 0.3) 0%,
+    rgba(227, 238, 255, 0.3) 99%,
+    rgba(227, 238, 255, 0.3) 100%
+  );
+}
+
+.element .shuttle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 16px;
+  left: 14px;
+}
+
+.element .security {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 16px;
+  left: 291px;
+}
+
+.element .group-7 {
+  position: absolute;
+  width: 186px;
+  height: 28px;
+  top: 22px;
+  left: 84px;
+}
+
+.element .text-wrapper-10 {
+  position: absolute;
+  top: 5px;
+  left: 47px;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #212121;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .https-lottiefiles {
+  left: 148px;
+  position: absolute;
+  width: 36px;
+  height: 28px;
+  top: 0;
+}
+
+.element .https-lottiefiles-2 {
+  left: 0;
+  position: absolute;
+  width: 36px;
+  height: 28px;
+  top: 0;
+}
+
+.element .group-8 {
+  position: absolute;
+  width: 345px;
+  height: 72px;
+  top: 130px;
+  left: 15px;
+  border-radius: 4px;
+  background: linear-gradient(
+    180deg,
+    rgba(243, 231, 233, 0.3) 0%,
+    rgba(227, 238, 255, 0.3) 99%,
+    rgba(227, 238, 255, 0.3) 100%
+  );
+}
+
+.element .group-9 {
+  position: absolute;
+  width: 203px;
+  height: 28px;
+  top: 22px;
+  left: 75px;
+}
+
+.element .text-wrapper-11 {
+  position: absolute;
+  top: 5px;
+  left: 46px;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #212121;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .https-lottiefiles-3 {
+  left: 165px;
+  position: absolute;
+  width: 36px;
+  height: 28px;
+  top: 0;
+}
+
+.element .text-wrapper-12 {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #212121;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .faq-s {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  position: absolute;
+  top: 796px;
+  left: 15px;
+}
+
+.element .frame-5 {
+  display: inline-flex;
+  align-items: center;
+  gap: 213px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.element .text-wrapper-13 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #212121;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .frame-6 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.element .text-wrapper-14 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #dc635b;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+.element .vector-5 {
+  position: relative;
+  width: 7px;
+  height: 12.29px;
+}
+
+.element .frame-7 {
+  display: flex;
+  flex-direction: column;
+  width: 345px;
+  height: 152px;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.element .group-10 {
+  position: relative;
+  width: 347px;
+  height: 38px;
+  margin-right: -2px;
+}
+
+.element .text-wrapper-15 {
+  position: absolute;
+  width: 315px;
+  top: 0;
+  left: 0;
+  font-family: "ixitype-Medium", Helvetica;
+  font-weight: 500;
+  color: #212121;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .vector-6 {
+  position: absolute;
+  width: 16px;
+  height: 8px;
+  top: 5px;
+  left: 329px;
+}
+
+.element .text-wrapper-16 {
+  position: relative;
+  width: 312px;
+  height: 98px;
+  font-family: "ixitype-Regular", Helvetica;
+  font-weight: 400;
+  color: #868686;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .line-2 {
+  width: 345px;
+  position: relative;
+  height: 1px;
+  object-fit: cover;
+}
+
+.element .frame-8 {
+  display: flex;
+  flex-direction: column;
+  width: 345px;
+  height: 31px;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+}
+
+.element .group-11 {
+  position: relative;
+  width: 347px;
+  height: 19px;
+  margin-right: -2px;
+}
+
+.element .frame-9 {
+  display: flex;
+  flex-direction: column;
+  width: 345px;
+  height: 50px;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+}
